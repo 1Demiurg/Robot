@@ -28,7 +28,7 @@ public class Drawer extends View {
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         robot.draw(canvas);
-           int r = 3 ;
+           int r = 6;
         switch (r){
             case 0: robot.moveRight(); break;
             case 1: robot.moveUp(); break;
@@ -38,6 +38,7 @@ public class Drawer extends View {
                 Toast.makeText(getContext(), robot.sayJoke(), Toast.LENGTH_SHORT).show(); break;
             case 5:
                 Toast.makeText(getContext(), robot.sayHaha(), Toast.LENGTH_SHORT).show(); break;
+            case 6:robot.moveCircle(1); break;
         }
 
         try {

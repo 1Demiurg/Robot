@@ -56,6 +56,15 @@ public class Robot extends Mech implements Movable, SayStupidJoke {
     public void moveDown() { y+=0.15; }
 
     @Override
+    public void moveCircle(int r){
+        float o=x;
+        float p=y;
+        for (int i=0;i<360;i++){
+        x=r*(float)Math.cos((double)i)+o;
+            y=r*(float)Math.sin((double)i)+p;
+    }    }
+
+    @Override
     public Point getPos() {
         return new Point((int) x, (int) y);
     }

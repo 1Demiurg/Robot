@@ -10,6 +10,7 @@ public interface Movable {
     public void moveRight();
     public void moveUp();
     public void moveDown();
+    public  void moveCircle(int r);
     public Point getPos();
 
 }
