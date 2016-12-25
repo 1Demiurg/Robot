@@ -15,7 +15,7 @@ public class Robot extends Mech implements Movable, SayStupidJoke {
         super();
         x = 0;
         y = 0;
-        size = 20;
+        size = 0.1f;
     }
 
 
@@ -39,27 +39,25 @@ public class Robot extends Mech implements Movable, SayStupidJoke {
 
     @Override
     public void moveLeft() {
-        x -= size;
+        x-=0.15;
     }
 
     @Override
     public void moveRight() {
-        x += size;
+        x+=0.15;
     }
 
     @Override
     public void moveUp() {
-        y -= size;
+        y-=0.15;
     }
 
     @Override
-    public void moveDown() {
-        y += size;
-    }
+    public void moveDown() { y+=0.15; }
 
     @Override
     public Point getPos() {
-        return new Point(x, y);
+        return new Point((int) x, (int) y);
     }
 
     @Override

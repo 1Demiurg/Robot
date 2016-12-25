@@ -28,7 +28,7 @@ public class Drawer extends View {
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         robot.draw(canvas);
-        int r = (new Random()).nextInt(6);
+           int r = 3 ;
         switch (r){
             case 0: robot.moveRight(); break;
             case 1: robot.moveUp(); break;
@@ -41,7 +41,7 @@ public class Drawer extends View {
         }
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
