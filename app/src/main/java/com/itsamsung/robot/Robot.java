@@ -8,14 +8,14 @@ import android.graphics.Point;
 /**
  * Created by TEACHER on 30.11.2016.
  */
-public class Robot extends Mech implements Movable, SayStupidJoke {
+public class Robot extends Mech implements Movable {
 
 
     public Robot(){
         super();
         x = 0;
         y = 0;
-        size = 0.1f;
+        size = 0;
     }
 
 
@@ -37,45 +37,12 @@ public class Robot extends Mech implements Movable, SayStupidJoke {
         canvas.drawCircle(x, y, size / 2, mPaint);
     }
 
-    @Override
-    public void moveLeft() {
-        x-=0.15;
-    }
 
-    @Override
-    public void moveRight() {
-        x+=0.15;
-    }
+   @Override
+    public void moveCircle(float t){
 
-    @Override
-    public void moveUp() {
-        y-=0.15;
-    }
+            x=100*(float)Math.cos((double)t)+180;
+            y=100*(float)Math.sin((double)t)+180;
 
-    @Override
-    public void moveDown() { y+=0.15; }
-
-    @Override
-    public void moveCircle(int r){
-        float o=x;
-        float p=y;
-        for (int i=0;i<360;i++){
-        x=r*(float)Math.cos((double)i)+o;
-            y=r*(float)Math.sin((double)i)+p;
-    }    }
-
-    @Override
-    public Point getPos() {
-        return new Point((int) x, (int) y);
-    }
-
-    @Override
-    public String sayJoke() {
-        return "You have white on your back";
-    }
-
-    @Override
-    public String sayHaha() {
-        return "KEK";
     }
 }

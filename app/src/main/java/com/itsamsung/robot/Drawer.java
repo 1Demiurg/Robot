@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import static android.R.attr.x;
+import static android.R.attr.y;
+
 /**
  * Created by TEACHER on 30.11.2016.
  */
@@ -18,6 +21,7 @@ public class Drawer extends View {
     private static final String TAG = "ROBOT_APP";
     private Robot robot;
 
+float t=0;
     public Drawer(Context context) {
         super(context);
         Log.i(TAG, Integer.toString(this.getWidth()));
@@ -25,28 +29,24 @@ public class Drawer extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas){
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         robot.draw(canvas);
-           int r = 6;
-        switch (r){
-            case 0: robot.moveRight(); break;
-            case 1: robot.moveUp(); break;
-            case 2: robot.moveLeft(); break;
-            case 3: robot.moveDown(); break;
-            case 4:
-                Toast.makeText(getContext(), robot.sayJoke(), Toast.LENGTH_SHORT).show(); break;
-            case 5:
-                Toast.makeText(getContext(), robot.sayHaha(), Toast.LENGTH_SHORT).show(); break;
-            case 6:robot.moveCircle(1); break;
-        }
+
+        robot.moveCircle(t);
+        t+=0.01;
+
 
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         invalidate();
     }
+
+
+
 }
+
+
