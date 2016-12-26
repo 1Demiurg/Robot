@@ -25,7 +25,7 @@ float t=0;
     public Drawer(Context context) {
         super(context);
         Log.i(TAG, Integer.toString(this.getWidth()));
-        robot = new Robot(200, 200, 50);
+        robot = new Robot(255, 365, 100);
     }
 
     @Override
@@ -34,7 +34,7 @@ float t=0;
         robot.draw(canvas);
 
         robot.moveCircle(t);
-        t+=0.01;
+        t+=0.05;
 
 
         try {

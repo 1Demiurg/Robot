@@ -10,6 +10,8 @@ import android.graphics.Point;
  */
 public class Robot extends Mech implements Movable {
 
+float o=0;
+    float p=0;
 
     public Robot(){
         super();
@@ -34,15 +36,15 @@ public class Robot extends Mech implements Movable {
         mPaint.setColor(Color.GRAY);
         canvas.drawPaint(mPaint);
         mPaint.setColor(Color.RED);
-        canvas.drawCircle(x, y, size / 2, mPaint);
+        canvas.drawCircle(o, p, size / 2, mPaint);
     }
 
 
    @Override
     public void moveCircle(float t){
 
-            x=100*(float)Math.cos((double)t)+180;
-            y=100*(float)Math.sin((double)t)+180;
+            o=100*(float)Math.cos((double)t)+x;
+            p=100*(float)Math.sin((double)t)+y;
 
     }
 }
